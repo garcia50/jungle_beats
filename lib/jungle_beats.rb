@@ -36,8 +36,17 @@ class JungleBeats
     end 
     sounds
   end
+
+  def prepend(data)
+    prepend_node = Node.new(data)
+    prepend_node.next_node = @head
+    @head = prepend_node
+    @count += 1
+  end
 end
 
+
+    
 
 
 

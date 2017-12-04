@@ -48,11 +48,44 @@ class JungleBeatsTest < Minitest::Test
     list.append("deep")
     assert_equal "doop deep", list.to_string
   end
+
+  def test_user_can_prepend_data_to_existing_list
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+
+    assert_equal "dop plop suu", list.to_string
+  end
+
+  def test_count_returns_3
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+
+    assert_equal 3, list.count
+  end
+
 end
 
 
-
-
+# > require "./lib/linked_list"
+# > list = LinkedList.new
+# > list.append("plop")
+# => "plop"
+# > list.to_string
+# => "plop"
+# > list.append("suu")
+# => "suu"
+# > list.prepend("dop")
+# => "dop"
+# > list.to_string
+# => "dop plop suu"
+# > list.count
+# => 3
+# > list.insert(1, "woo")
+# => "woo"
+# list.to_string
+# => "dop woo plop suu"
 
 
 
