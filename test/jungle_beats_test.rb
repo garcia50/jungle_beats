@@ -21,8 +21,12 @@ class JungleBeatsTest < Minitest::Test
     assert_equal "doop", list.append("doop")
   end
 
-end
+  def test_next_node_returns_nil
+    list.append("doop")
+    assert_nil list.head.next_node
+  end
 
+end
 
 # > require "./lib/linked_list"
 # > list = LinkedList.new
@@ -39,3 +43,19 @@ end
 # => 1
 # > list.to_string
 # => "doop"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
