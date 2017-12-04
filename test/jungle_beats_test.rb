@@ -26,6 +26,11 @@ class JungleBeatsTest < Minitest::Test
     assert_nil list.head.next_node
   end
 
+  def test_count_returns_expected_amount
+    list.append("doop")
+    assert_equal 1, list.count
+  end
+
 end
 
 # > require "./lib/linked_list"
