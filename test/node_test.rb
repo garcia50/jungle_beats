@@ -3,9 +3,8 @@ require 'minitest/pride'
 require './lib/node'
 
 class NodeTest < Minitest::Test
-
   attr_reader :node
-
+  
   def setup
     @node = Node.new("plop")
   end
@@ -17,5 +16,4 @@ class NodeTest < Minitest::Test
   def test_next_node_returns_nil
     assert_nil node.next_node
   end
-
 end
