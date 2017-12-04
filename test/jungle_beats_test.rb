@@ -13,6 +13,10 @@ class JungleBeatsTest < Minitest::Test
     assert_instance_of JungleBeats, list
   end
 
+  def test_head_returns_nil
+    assert_nil list.head
+  end
+
 end
 
 
