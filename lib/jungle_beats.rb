@@ -8,4 +8,12 @@ class JungleBeats
     @head = nil
   end
 
+  def append(sound)
+    if @head == nil
+      @head = sound
+    else
+      @head.next_node = sound
+    end
+  end 
+
 end

@@ -17,9 +17,11 @@ class JungleBeatsTest < Minitest::Test
     assert_nil list.head
   end
 
+  def test_append_adds_sound
+    assert_equal "doop", list.append("doop")
+  end
+
 end
-
-
 
 
 # > require "./lib/linked_list"
