@@ -14,12 +14,30 @@ class JungleBeats
     @count += 1
     if @head == nil
       @head = node
-      @head.sound
+    else
+      append_with_existing_nodes(@head, node)
     end
   end
 
-   def to_string
-    @head.sound
+  def append_with_existing_nodes(head, node)
+    if head.next_node == nil 
+      head.next_node = node
+    else
+      append_with_existing_nodes(head.next_node, node)
+    end
+  end
+
+  def to_string
+    sounds = "#{@head.sound}"
+    current_node = @head.next_node
+    until current_node == nil do
+      sounds << " #{current_node.sound}"
+      current_node = current_node.next_node
+    end 
+    sounds
   end
 end
+
+
+
 

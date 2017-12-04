@@ -18,7 +18,8 @@ class JungleBeatsTest < Minitest::Test
   end
 
   def test_append_adds_sound
-    assert_equal "doop", list.append("doop")
+    list.append("doop")
+    assert_equal "doop", list.head.sound
   end
 
   def test_next_node_returns_nil
@@ -26,7 +27,7 @@ class JungleBeatsTest < Minitest::Test
     assert_nil list.head.next_node
   end
 
-  def test_count_returns_expected_amount
+  def test_count_returns_1
     list.append("doop")
     assert_equal 1, list.count
   end
@@ -36,35 +37,18 @@ class JungleBeatsTest < Minitest::Test
     assert_equal "doop", list.to_string
   end
 
+  def test_count_returns_2
+    list.append("doop")
+    list.append("deep")
+    assert_equal 2, list.count
+  end
+
+  def test_to_string_returns_new_string
+    list.append("doop")
+    list.append("deep")
+    assert_equal "doop deep", list.to_string
+  end
 end
-
-# > require "./lib/linked_list"
-# > list = LinkedList.new
-# => <LinkedList head=nil #45678904567>
-# > list.head
-# => nil
-# > list.append("doop")
-# => "doop"
-# > list
-# => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
-# > list.head.next_node
-# => nil
-# > list.count
-# => 1
-# > list.to_string
-# => "doop"
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
