@@ -18,4 +18,8 @@ class JungleBeats
     end
   end
 
+   def to_string
+    @head.sound
+  end
 end
+

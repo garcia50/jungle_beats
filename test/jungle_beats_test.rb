@@ -31,6 +31,11 @@ class JungleBeatsTest < Minitest::Test
     assert_equal 1, list.count
   end
 
+  def test_to_string_returns_string
+    list.append("doop")
+    assert_equal "doop", list.to_string
+  end
+
 end
 
 # > require "./lib/linked_list"
