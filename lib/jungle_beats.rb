@@ -75,9 +75,10 @@ class JungleBeats
   end
 
   def includes?(data, h = head)
-    sounds = ""
-    if h.includes?(data)
-      sounds << #
+    if "#{h.sound}" == data
+      true
+    else
+      false
     end
   end
 
