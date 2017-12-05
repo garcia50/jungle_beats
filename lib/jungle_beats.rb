@@ -1,7 +1,6 @@
 require './lib/node'
 
 class JungleBeats
-
   attr_accessor :head, :count
 
   def initialize
@@ -45,8 +44,6 @@ class JungleBeats
   end
 
   def insert(position, data, recursion_count = 0, current_node = head)
-    # current_node = @head
-
     if recursion_count == position - 1
       insert_node = Node.new(data)
       insert_node.next_node = current_node.next_node
@@ -75,6 +72,13 @@ class JungleBeats
       count += 1
     end
     sounds
+  end
+
+  def includes?(data, h = head)
+    sounds = ""
+    if h.includes?(data)
+      sounds << #
+    end
   end
 
 end

@@ -94,6 +94,16 @@ class JungleBeatsTest < Minitest::Test
     assert_equal "woo shi shu", list.find(1, 3)
   end
 
+  def test_includes_returns_correct_sound
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+    assert list.includes?("deep")
+  end
+
 end
 
 
