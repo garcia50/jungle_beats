@@ -74,28 +74,46 @@ class JungleBeatsTest < Minitest::Test
     assert_equal "dop woo plop suu", list.to_string
   end
 
+  def test_find_locates_sound_with_given_position
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+    assert_equal "shi", list.find(2, 1)
+  end
+
+  def test_find_locates_sound_with_given_position
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+    assert_equal "woo shi shu", list.find(1, 3)
+  end
+
 end
 
 
-# > require "./lib/linked_list"
-# > list = LinkedList.new
-# > list.append("plop")
-# => "plop"
-# > list.to_string
-# => "plop"
-# > list.append("suu")
-# => "suu"
-# > list.prepend("dop")
-# => "dop"
-# > list.to_string
-# => "dop plop suu"
-# > list.count
-# => 3
-# > list.insert(1, "woo")
-# => "woo"
-# list.to_string
-# => "dop woo plop suu"
 
+# > list.to_string
+# => "deep woo shi shu blop"
+# > list.find(2, 1)
+# => "shi"
+# > list.find(1, 3)
+# => "woo shi shu"
+# > list.includes?("deep")
+# => true
+# > list.includes?("dep")
+# => false
+# > list.pop
+# => "blop"
+# > list.pop
+# => "shu"
+# > list.to_string
+# => "deep woo shi"
 
 
 

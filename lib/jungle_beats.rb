@@ -56,6 +56,27 @@ class JungleBeats
       insert(position, data, recursion_count, current_node.next_node)
     end
   end
+
+  def find(position, amount, recursion_count = 0, h = head, count = 1)
+    sounds = "#{h.sound}"
+    if position != recursion_count
+      recursion_count += 1
+      find(position, amount, recursion_count, h.next_node)
+    elsif position == recursion_count 
+      adding_sound(count, amount, sounds, h)
+    end
+  end
+
+  def adding_sound(count, amount, sounds, h)
+    while count != amount do
+      current_node = h.next_node 
+      sounds << " #{current_node.sound}"
+      h = current_node
+      count += 1
+    end
+    sounds
+  end
+
 end
 
 
