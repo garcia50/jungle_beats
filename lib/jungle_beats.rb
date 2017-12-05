@@ -5,7 +5,7 @@ class JungleBeats
   attr_accessor :head, :count
 
   def initialize
-    @head = nil
+    @head = nil 
     @count = 0
   end
 
@@ -43,10 +43,47 @@ class JungleBeats
     @head = prepend_node
     @count += 1
   end
+
+  def insert(position, data, recursion_count = 0, current_node = head)
+    # current_node = @head
+
+    if recursion_count == position - 1
+      insert_node = Node.new(data)
+      insert_node.next_node = current_node.next_node
+      current_node.next_node = insert_node
+    else
+      recursion_count += 1
+      insert(position, data, recursion_count, current_node.next_node)
+    end
+  end
 end
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -65,6 +65,15 @@ class JungleBeatsTest < Minitest::Test
     assert_equal 3, list.count
   end
 
+  def test_insert_places_data_in_given_positon_and_returns_string
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    list.insert(1, "woo")
+
+    assert_equal "dop woo plop suu", list.to_string
+  end
+
 end
 
 
