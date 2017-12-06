@@ -92,11 +92,31 @@ class JungleBeats
     current_node.next_node = nil
     "#{delete.sound}"
   end
-
 end
 
 
+
+
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -133,25 +133,3 @@ class JungleBeatsTest < Minitest::Test
     assert_equal "shu", list.pop
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
