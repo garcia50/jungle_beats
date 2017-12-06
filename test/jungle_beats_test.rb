@@ -124,26 +124,18 @@ class JungleBeatsTest < Minitest::Test
     assert_equal "blop", list.pop
   end
 
+  def test_pop_removes_given_sound_2
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+
+    assert_equal "shu", list.pop
+  end
 end
 
 
 
-# > list.to_string
-# => "deep woo shi shu blop"
-# > list.find(2, 1)
-# => "shi"
-# > list.find(1, 3)
-# => "woo shi shu"
-# > list.includes?("deep")
-# => true
-# > list.includes?("dep")
-# => false
-# > list.pop
-# => "blop"
-# > list.pop
-# => "shu"
-# > list.to_string
-# => "deep woo shi"
 
 
 
