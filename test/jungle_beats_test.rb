@@ -104,15 +104,15 @@ class JungleBeatsTest < Minitest::Test
     assert list.includes?("deep")
   end
 
-def test_includes_returns_correct_sound_2
-  list.append("deep")
-  list.append("woo")
-  list.append("shi")
-  list.append("shu")
-  list.append("blop")
+  def test_includes_returns_correct_sound_2
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
 
-  refute list.includes?("dep")
-end
+    refute list.includes?("dep")
+  end
 
 
 end
