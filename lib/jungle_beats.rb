@@ -74,12 +74,24 @@ class JungleBeats
     sounds
   end
 
-  def includes?(data, h = head)
-    if "#{h.sound}" == data
+  def includes?(data)
+    if "#{head.sound}" == data
       true
     else
       false
     end
+  end
+
+  def pop
+    current_node = head    
+    until current_node.next_node.next_node == nil do
+      current_node = current_node.next_node
+    end
+    @count -= 1
+    delete = current_node.next_node
+    current_node.next_node = nil
+    "#{delete.sound}"
+
   end
 
 end

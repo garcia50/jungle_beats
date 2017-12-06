@@ -114,6 +114,15 @@ class JungleBeatsTest < Minitest::Test
     refute list.includes?("dep")
   end
 
+  def test_pop_removes_given_sound
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+    assert_equal "blop", list.pop
+  end
 
 end
 
