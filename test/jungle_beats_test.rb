@@ -3,133 +3,133 @@ require 'minitest/pride'
 require './lib/jungle_beats'
 
 class JungleBeatsTest < Minitest::Test
-  attr_reader :list
+  attr_reader :beats
 
   def setup
-    @list = JungleBeats.new
+    @beats = JungleBeats.new
   end
 
-  def test_instance_of_Linked_list
-    assert_instance_of JungleBeats, list
+  def test_instance_of_Linked_beats
+    assert_instance_of JungleBeats, beats
   end
 
   def test_head_returns_nil
-    assert_nil list.head
+    assert_nil beats.head
   end
 
   def test_append_adds_sound
-    list.append("doop")
-    assert_equal "doop", list.head.sound
+    beats.append("doop")
+    assert_equal "doop", beats.head.sound
   end
 
   def test_next_node_returns_nil
-    list.append("doop")
-    assert_nil list.head.next_node
+    beats.append("doop")
+    assert_nil beats.head.next_node
   end
 
   def test_count_returns_1
-    list.append("doop")
-    assert_equal 1, list.count
+    beats.append("doop")
+    assert_equal 1, beats.count
   end
 
   def test_to_string_returns_string
-    list.append("doop")
-    assert_equal "doop", list.to_string
+    beats.append("doop")
+    assert_equal "doop", beats.to_string
   end
 
   def test_count_returns_2
-    list.append("doop")
-    list.append("deep")
-    assert_equal 2, list.count
+    beats.append("doop")
+    beats.append("deep")
+    assert_equal 2, beats.count
   end
 
   def test_to_string_returns_new_string
-    list.append("doop")
-    list.append("deep")
-    assert_equal "doop deep", list.to_string
+    beats.append("doop")
+    beats.append("deep")
+    assert_equal "doop deep", beats.to_string
   end
 
-  def test_user_can_prepend_data_to_existing_list
-    list.append("plop")
-    list.append("suu")
-    list.prepend("dop")
+  def test_user_can_prepend_data_to_existing_beats
+    beats.append("plop")
+    beats.append("suu")
+    beats.prepend("dop")
 
-    assert_equal "dop plop suu", list.to_string
+    assert_equal "dop plop suu", beats.to_string
   end
 
   def test_count_returns_3
-    list.append("plop")
-    list.append("suu")
-    list.prepend("dop")
+    beats.append("plop")
+    beats.append("suu")
+    beats.prepend("dop")
 
-    assert_equal 3, list.count
+    assert_equal 3, beats.count
   end
 
   def test_insert_places_data_in_given_positon_and_returns_string
-    list.append("plop")
-    list.append("suu")
-    list.prepend("dop")
-    list.insert(1, "woo")
+    beats.append("plop")
+    beats.append("suu")
+    beats.prepend("dop")
+    beats.insert(1, "woo")
 
-    assert_equal "dop woo plop suu", list.to_string
+    assert_equal "dop woo plop suu", beats.to_string
   end
 
   def test_find_locates_sound_with_given_position
-    list.append("deep")
-    list.append("woo")
-    list.append("shi")
-    list.append("shu")
-    list.append("blop")
+    beats.append("deep")
+    beats.append("woo")
+    beats.append("shi")
+    beats.append("shu")
+    beats.append("blop")
 
-    assert_equal "shi", list.find(2, 1)
+    assert_equal "shi", beats.find(2, 1)
   end
 
   def test_find_locates_sound_with_given_position
-    list.append("deep")
-    list.append("woo")
-    list.append("shi")
-    list.append("shu")
-    list.append("blop")
+    beats.append("deep")
+    beats.append("woo")
+    beats.append("shi")
+    beats.append("shu")
+    beats.append("blop")
 
-    assert_equal "woo shi shu", list.find(1, 3)
+    assert_equal "woo shi shu", beats.find(1, 3)
   end
 
   def test_includes_returns_correct_sound
-    list.append("deep")
-    list.append("woo")
-    list.append("shi")
-    list.append("shu")
-    list.append("blop")
+    beats.append("deep")
+    beats.append("woo")
+    beats.append("shi")
+    beats.append("shu")
+    beats.append("blop")
 
-    assert list.includes?("deep")
+    assert beats.includes?("deep")
   end
 
   def test_includes_returns_correct_sound_2
-    list.append("deep")
-    list.append("woo")
-    list.append("shi")
-    list.append("shu")
-    list.append("blop")
+    beats.append("deep")
+    beats.append("woo")
+    beats.append("shi")
+    beats.append("shu")
+    beats.append("blop")
 
-    refute list.includes?("dep")
+    refute beats.includes?("dep")
   end
 
   def test_pop_removes_given_sound
-    list.append("deep")
-    list.append("woo")
-    list.append("shi")
-    list.append("shu")
-    list.append("blop")
+    beats.append("deep")
+    beats.append("woo")
+    beats.append("shi")
+    beats.append("shu")
+    beats.append("blop")
 
-    assert_equal "blop", list.pop
+    assert_equal "blop", beats.pop
   end
 
   def test_pop_removes_given_sound_2
-    list.append("deep")
-    list.append("woo")
-    list.append("shi")
-    list.append("shu")
+    beats.append("deep")
+    beats.append("woo")
+    beats.append("shi")
+    beats.append("shu")
 
-    assert_equal "shu", list.pop
+    assert_equal "shu", beats.pop
   end
 end
