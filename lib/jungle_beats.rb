@@ -87,11 +87,14 @@ class JungleBeats
     until current_node.next_node.next_node == nil do
       current_node = current_node.next_node
     end
+    delete_sound(current_node)
+  end
+
+  def delete_sound(current_node)
     @count -= 1
     delete = current_node.next_node
     current_node.next_node = nil
     "#{delete.sound}"
   end
 end
-
 
